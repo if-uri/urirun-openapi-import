@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: urirun-openapi-import
+Version: 0.1.0
+Summary: Import an OpenAPI/Swagger spec as urirun URI bindings — turn each operation into a typed http-service route. Pure stdlib, no urirun dependency.
+License-Expression: Apache-2.0
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# urirun-openapi-import
+
+Import an **OpenAPI / Swagger spec as urirun URI bindings** — each API operation becomes a typed
+`http-service` route addressable by URI. Extracted from `urirun.connectors.openapi_import` as a
+standalone, dependency-free package.
+
+Pure stdlib (`urllib`, `pathlib`) — **no `urirun` dependency** — so it can be installed wherever
+the `add_openapi` capability is needed without pulling in the backend.
+
+## Why it's its own package
+
+`extraction_audit.py` reports it a clean leaf (zero urirun imports, stdlib only). It is a distinct,
+self-contained capability — turning a spec into bindings — that only `node/mesh.py` consumes, and
+only lazily (the `urirun … add_openapi` CLI command). The textbook lift case, like `urirun-cdp` /
+`urirun-uinput`.
+
+## Install
+
+```bash
+pip install -e .          # editable, from this repo
+```
+
+## Use
+
+```python
+from urirun_openapi_import import openapi_import
+
+spec = openapi_import.load_spec("https://api.example.com/openapi.json")
+bindings = openapi_import.import_openapi(spec, scheme="api", target="example")
+```
+
+## Back-compat
+
+The old import path still works via a re-export shim in the urirun package:
+
+```python
+from urirun.connectors import openapi_import   # → urirun_openapi_import.openapi_import (sys.modules shim)
+```
+
+`node/mesh.py` loads it lazily inside the `add_openapi` CLI command, so the broad import graph is
+unaffected when this package isn't installed; only that command needs it.
+
+## Tests
+
+```bash
+PYTHONPATH=../urirun/adapters/python python -m pytest tests/ -q
+```
+
+The capability's own tests live here (`tests/test_openapi_import.py`).
+
+## License
+
+Apache-2.0 — see [LICENSE](LICENSE).

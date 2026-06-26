@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/urirun_openapi_import/__init__.py
+src/urirun_openapi_import/openapi_import.py
+src/urirun_openapi_import.egg-info/PKG-INFO
+src/urirun_openapi_import.egg-info/SOURCES.txt
+src/urirun_openapi_import.egg-info/dependency_links.txt
+src/urirun_openapi_import.egg-info/top_level.txt
+tests/test_openapi_import.py

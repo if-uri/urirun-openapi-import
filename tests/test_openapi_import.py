@@ -1,6 +1,8 @@
 """Tests for `urirun add-openapi` -> declarative fetch routes."""
 
 from __future__ import annotations
+import pytest as _pg  # noqa: E402
+_pg.importorskip("urirun")  # integration tests plug into urirun; the isolated package env skips them
 
 from urllib.parse import unquote
 

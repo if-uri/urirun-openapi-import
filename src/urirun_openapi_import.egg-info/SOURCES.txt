@@ -7,4 +7,5 @@ src/urirun_openapi_import.egg-info/PKG-INFO
 src/urirun_openapi_import.egg-info/SOURCES.txt
 src/urirun_openapi_import.egg-info/dependency_links.txt
 src/urirun_openapi_import.egg-info/top_level.txt
+tests/test_import_pure.py
 tests/test_openapi_import.py

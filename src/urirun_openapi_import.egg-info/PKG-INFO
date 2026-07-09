@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: urirun-openapi-import
-Version: 0.1.0
+Version: 0.1.1
 Summary: Import an OpenAPI/Swagger spec as urirun URI bindings — turn each operation into a typed http-service route. Pure stdlib, no urirun dependency.
 License-Expression: Apache-2.0
 Requires-Python: >=3.9
@@ -13,7 +13,7 @@ Dynamic: license-file
 
 ## AI Cost Tracking
 
-![PyPI](https://img.shields.io/badge/pypi-costs-blue) ![Version](https://img.shields.io/badge/version-0.1.0-blue) ![Python](https://img.shields.io/badge/python-3.9+-blue) ![License](https://img.shields.io/badge/license-Apache--2.0-green)
+![PyPI](https://img.shields.io/badge/pypi-costs-blue) ![Version](https://img.shields.io/badge/version-0.1.1-blue) ![Python](https://img.shields.io/badge/python-3.9+-blue) ![License](https://img.shields.io/badge/license-Apache--2.0-green)
 ![AI Cost](https://img.shields.io/badge/AI%20Cost-$0.00-orange) ![Human Time](https://img.shields.io/badge/Human%20Time-5.2h-blue) ![Model](https://img.shields.io/badge/Model-openrouter%2Fqwen%2Fqwen3--coder--next-lightgrey)
 
 - 🤖 **LLM usage:** $0.0001 (1 commits)
@@ -73,4 +73,4 @@ The capability's own tests live here (`tests/test_openapi_import.py`).
 
 ## License
 
-Apache-2.0 — see [LICENSE](LICENSE).
+Licensed under Apache-2.0.
